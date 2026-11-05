@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RailSeat - Train Seat Booking</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Rail<span>Seat</span></div>
+  <div class="nav-links"><a href="#">Trains</a><a href="#">My Bookings</a><a href="#">PNR Status</a></div>
+  <button class="btn" onclick="openLogin()">Login</button>
+</nav>
+
+<div class="hero">
+  <h1>Gurugram <span>→</span> Jaipur</h1>
+  <p>12414 • Pooja Express • Fri, 6 Nov • 2A Coach • 4h 10m</p>
+</div>
+
+<div class="wrap">
+  <!-- LEFT - SEAT MAP -->
+  <div class="coach">
+    <div class="coach-head">
+      <b>Coach A1 - AC 2 Tier</b>
+      <span>⬜ Available &nbsp; 🟦 Selected &nbsp; ⬛ Booked</span>
+    </div>
+    <div class="legend"><span>Window</span><span>Aisle</span><span>Window</span></div>
+
+    <div class="seats">
+      <input type="checkbox" id="s1"><label for="s1">1</label>
+      <input type="checkbox" id="s2"><label for="s2">2</label>
+      <div class="gap"></div>
+      <input type="checkbox" id="s3"><label for="s3">3</label>
+      <input type="checkbox" id="s4"><label for="s4">4</label>
+
+      <input type="checkbox" id="s5"><label for="s5">5</label>
+      <input type="checkbox" id="s6" disabled><label for="s6" class="booked">6</label>
+      <div class="gap"></div>
+      <input type="checkbox" id="s7"><label for="s7">7</label>
+      <input type="checkbox" id="s8"><label for="s8">8</label>
+
+      <input type="checkbox" id="s9"><label for="s9">9</label>
+      <input type="checkbox" id="s10"><label for="s10">10</label>
+      <div class="gap"></div>
+      <input type="checkbox" id="s11" disabled><label for="s11" class="booked">11</label>
+      <input type="checkbox" id="s12"><label for="s12">12</label>
+
+      <input type="checkbox" id="s13"><label for="s13">13</label>
+      <input type="checkbox" id="s14"><label for="s14">14</label>
+      <div class="gap"></div>
+      <input type="checkbox" id="s15"><label for="s15">15</label>
+      <input type="checkbox" id="s16" disabled><label for="s16" class="booked">16</label>
+
+      <input type="checkbox" id="s17"><label for="s17">17</label>
+      <input type="checkbox" id="s18"><label for="s18">18</label>
+      <div class="gap"></div>
+      <input type="checkbox" id="s19"><label for="s19">19</label>
+      <input type="checkbox" id="s20"><label for="s20">20</label>
+    </div>
+    <p class="note">💡 Seat pe click karke select karo</p>
+  </div>
+
+  <!-- RIGHT - SUMMARY -->
+  <div class="summary">
+    <h3>Booking Summary</h3>
+    <div class="row"><span>Train</span><b>Pooja Express</b></div>
+    <div class="row"><span>From - To</span><b>GGN → JP</b></div>
+    <div class="row"><span>Date</span><b>6 Nov, 2026</b></div>
+    <div class="row"><span>Selected Seats</span><b id="seatCount">0 Seats</b></div>
+    <hr>
+    <div class="row"><span>Base Fare</span><span id="baseFare">₹ 0</span></div>
+    <div class="row"><span>Convenience</span><span>₹ 35</span></div>
+    <div class="row total"><span>Total</span><b id="totalFare">₹ 35</b></div>
+
+    <input id="pName" placeholder="Passenger Name" class="inp">
+    <input placeholder="Age" class="inp">
+    <select class="inp"><option>Lower Berth</option><option>Upper Berth</option><option>Side Lower</option></select>
+
+    <button class="pay" onclick="doPay()">Proceed to Pay →</button>
+    <p class="small">Free Cancellation upto 2 hrs before departure</p>
+  </div>
+</div>
+
+<footer>RailSeat © 2026 • Made with HTML + CSS + JS • College Project</footer>
+
+<!-- LOGIN POPUP -->
+<div id="loginPopup" class="popup">
+  <div class="popup-box">
+    <h3>Login to RailSeat</h3>
+    <input id="phone" placeholder="Mobile Number - 98765XXXXX" class="inp">
+    <button onclick="doLogin()" class="pay">Send OTP →</button>
+    <p onclick="closeLogin()" style="text-align:center;margin-top:10px;cursor:pointer;color:#64748B;font-size:13px">Close</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
